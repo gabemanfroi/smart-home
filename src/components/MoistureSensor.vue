@@ -30,7 +30,8 @@ export default {
   },
   methods: {
     connectWebSocket() {
-      this.socket = new WebSocket("ws://192.168.3.155:8080");
+      const websocketUrl = import.meta.env.VUE_APP_WEBSOCKET_URL;
+      this.socket = new WebSocket(websocketUrl);
 
       this.socket.onopen = () => {
         console.log("✅ WebSocket Connected!");
