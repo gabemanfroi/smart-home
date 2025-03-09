@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     connectWebSocket() {
-      const websocketUrl = import.meta.env.VUE_APP_WEBSOCKET_URL;
+      const websocketUrl = process.env.VUE_APP_WEBSOCKET_URL;
       this.socket = new WebSocket(websocketUrl);
 
       this.socket.onopen = () => {
